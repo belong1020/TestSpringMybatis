@@ -5,8 +5,10 @@
 <generatorConfiguration>
 	<context id="mysql" defaultModelType="hierarchical"
 		targetRuntime="MyBatis3" >
-		<!-- dlc="true" 自定义模式, BaseMapper, Controller 模式 -->
-		<!-- <plugin type="com.plu.PaginationPlugin" />   -->
+		<plugin type="com.plu.MapperPlugin">
+            <property name="targetProject" value="../TestSpringMybatis/src/main/java"/>
+            <property name="targetPackage" value="com.gnt.mapper"/><!-- mapper package, don't need write in fact, file will create as usual. -->
+        </plugin> 
 		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
 		<plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
@@ -32,7 +34,7 @@
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
-			<property name="rootInterface" value="com.gnt.entity.Base" />
+			<!-- <property name="rootInterface" value="com.gnt.entity.Base" /> -->
 		</javaModelGenerator>
 		<!-- 生成映射文件的包名和位置 -->
 		<sqlMapGenerator targetPackage="mybatis.mapping"
@@ -45,7 +47,7 @@
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<!-- 所有生成的接口添加一个父接口 -->
-			<property name="rootInterface" value="com.gnt.mapper.BaseMapper" />
+			<!-- <property name="rootInterface" value="com.gnt.mapper.BaseMapper" /> -->
 
 		</javaClientGenerator>
 
@@ -54,6 +56,12 @@
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">
+			<!-- 
+			enableInsert="false"
+			enableSelectByPrimaryKey="false"
+			enableUpdateByPrimaryKey="false"
+			enableDeleteByPrimaryKey="false" 
+			-->
 			<!-- schema 即为数据库名 tableName 为对应的数据库表 domainObjectName 是要生成的实体类 enable*ByExample 
 				是否生成 example类 -->
 			<!-- 忽略列，不生成bean 字段 <ignoreColumn column="FRED" /> -->
@@ -66,13 +74,6 @@
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">
-			<!-- schema 即为数据库名 tableName 为对应的数据库表 domainObjectName 是要生成的实体类 enable*ByExample 
-				是否生成 example类 -->
-			<!-- 忽略列，不生成bean 字段 <ignoreColumn column="FRED" /> -->
-			<!-- 指定列的java数据类型 <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" 
-				/> -->
-			<!-- 重写"BEG_DATA"列,以便生成的属性名是"startDate" <columnOverride column="BEG_DATE" 
-				property="startDate"/> -->
 		</table>
 	</context>
 </generatorConfiguration>

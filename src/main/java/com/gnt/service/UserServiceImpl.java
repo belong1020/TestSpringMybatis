@@ -1,10 +1,11 @@
 package com.gnt.service;
 
-import com.gnt.entity.User;
-import com.gnt.entity.UserKey;
-
+/**
+ * not must need in fact.
+ * @author Belong.
+ */
 //@Service
-public class UserServiceImpl extends BaseServiceImpl<UserKey, User> implements UserService {
+public class UserServiceImpl extends BaseServiceImpl/*<UserKey, User>*/ implements UserService {
 
 //	@Autowired
 //	UserMapper userMapper;
