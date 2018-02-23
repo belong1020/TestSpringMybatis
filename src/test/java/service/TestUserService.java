@@ -1,19 +1,6 @@
 package service;
 
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.gnt.entity.User;
-import com.gnt.entity.UserKey;
-import com.gnt.mapper.UserMapper;
-import com.gnt.service.BaseServiceImpl;
-import com.gnt.service.SpecialServiceImpl;
 
 /**
  * 业务代码中创建BaseServiceImpl , 和对应Mapper ,
@@ -25,7 +12,7 @@ import com.gnt.service.SpecialServiceImpl;
  */
 @MapperScan(value="com.gnt.mapper")
 public class TestUserService {
-
+/*
 	BaseServiceImpl baseServiceImpl;
 	SpecialServiceImpl specialServiceImpl;
 	@Autowired
@@ -77,5 +64,5 @@ public class TestUserService {
 		user.setName("q");
 		user.setPassword("q");
 		System.out.println(specialServiceImpl.selectBySelective(user));
-	}
+	}*/
 }

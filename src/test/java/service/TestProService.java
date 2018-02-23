@@ -1,22 +1,10 @@
 package service;
 
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.gnt.entity.ProduceKey;
-import com.gnt.mapper.BaseMapper;
-import com.gnt.mapper.ProduceMapper;
-import com.gnt.service.BaseServiceImpl;
 
 @MapperScan(value="com.gnt.mapper")
 public class TestProService {
-
+/*
 	
 	BaseServiceImpl baseServiceImpl;
 	
@@ -47,6 +35,6 @@ public class TestProService {
 		List selectAll = baseServiceImpl.selectAll();
 		
 		System.out.println(selectAll);
-	}
+	}*/
 
 }

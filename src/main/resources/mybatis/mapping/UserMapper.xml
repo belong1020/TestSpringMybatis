@@ -114,21 +114,4 @@
   <select id="selectAll" resultMap="BaseResultMap">
      select * from user
   </select>
-  <select id="selectBySelective" parameterType="com.gnt.entity.User" resultMap="BaseResultMap">
-     select * from user 
-      <trim prefix="where" prefixOverrides="and|or">
-      <if test="id!=null">
-               id=#{id}
-           </if>
-          <if test="name!=null">
-               name=#{name}
-           </if>
-           <if test="password!=null">
-                and password=#{password}
-           </if>
-           <if test="type!=null">
-                and type=#{type}
-           </if>
-       </trim>  
-  </select>
 </mapper>
