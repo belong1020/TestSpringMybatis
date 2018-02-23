@@ -2,8 +2,6 @@ package com.gnt.service;
 
 import java.util.List;
 
-import com.gnt.mapper.BaseMapper;
-
 public interface BaseService<K, V> {
 
     int deleteByPrimaryKey(K k);

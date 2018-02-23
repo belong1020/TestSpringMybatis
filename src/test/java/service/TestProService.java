@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,6 +20,12 @@ public class TestProService {
 	
 	BaseServiceImpl baseServiceImpl;
 	
+	@Autowired
+	ProduceMapper mapper;
+	
+	{
+		baseServiceImpl = new BaseServiceImpl(mapper);
+	}
 	@Before
 	public void setUp() throws Exception {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-mybatis.xml");

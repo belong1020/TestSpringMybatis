@@ -13,6 +13,7 @@ import com.gnt.entity.User;
 import com.gnt.entity.UserKey;
 import com.gnt.mapper.UserMapper;
 import com.gnt.service.BaseServiceImpl;
+import com.gnt.service.SpecialServiceImpl;
 
 /**
  * 业务代码中创建BaseServiceImpl , 和对应Mapper ,
@@ -26,7 +27,7 @@ import com.gnt.service.BaseServiceImpl;
 public class TestUserService {
 
 	BaseServiceImpl baseServiceImpl;
-	
+	SpecialServiceImpl specialServiceImpl;
 	@Autowired
 	UserMapper mapper;
 	
@@ -41,13 +42,13 @@ public class TestUserService {
 		// first way , dont know why @autowired can't autowired parameter.
 		// this way don't need other server class except BaseService class,
 //		NoUniqueBeanDefinitionException
-//		mapper = (UserMapper) context.getBean(UserMapper.class);
-		baseServiceImpl = (BaseServiceImpl) context.getBean(BaseServiceImpl.class);
+		mapper = (UserMapper) context.getBean(UserMapper.class);
+		baseServiceImpl = new BaseServiceImpl<UserKey, User>(mapper);
 		
 //		baseServiceImpl.setBaseMapper(mapper);
 		
 		// second way , don't wanna achieve, If you are needed or interested , 
-//		userServiceImpl = context.getBean(UserServiceImpl.class);
+//		userServiceImpl = (BaseServiceImpl) context.getBean(BaseServiceImpl.class);
 		
 		// third way
 //		baseServiceImpl = context.getBean(UserServiceImpl.class);
@@ -69,4 +70,12 @@ public class TestUserService {
 		System.out.println(selectAll);
 	}
 
+	@Test
+	public void selectBySelective() {
+		specialServiceImpl = new SpecialServiceImpl<UserKey, User>(mapper);
+		User user = new User();
+		user.setName("q");
+		user.setPassword("q");
+		System.out.println(specialServiceImpl.selectBySelective(user));
+	}
 }

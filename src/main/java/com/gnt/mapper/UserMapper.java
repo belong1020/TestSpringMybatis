@@ -3,5 +3,7 @@ package com.gnt.mapper;
 import com.gnt.entity.User;
 import com.gnt.entity.UserKey;
 
-public interface UserMapper extends BaseMapper {
+public interface UserMapper extends BaseMapper<UserKey, User> {
+
+	User selectBySelective(User user);
 }

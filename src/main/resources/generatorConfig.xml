@@ -5,9 +5,9 @@
 <generatorConfiguration>
 	<context id="mysql" defaultModelType="hierarchical"
 		targetRuntime="MyBatis3" >
-		<plugin type="com.plu.MapperPlugin">
-            <property name="targetProject" value="../TestSpringMybatis/src/main/java"/>
-            <property name="targetPackage" value="com.gnt.mapper"/><!-- mapper package, don't need write in fact, file will create as usual. -->
+		<plugin type="com.util.MapperPlugin">
+            <!-- <property name="targetProject" value="../TestSpringMybatis/src/main/java"/> -->
+            <!-- <property name="targetPackage" value="com.gnt.mapper"/> --><!-- mapper package, don't need write in fact, file will create as usual. -->
         </plugin> 
 		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>

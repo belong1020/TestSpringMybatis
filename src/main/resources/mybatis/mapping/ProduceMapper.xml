@@ -122,4 +122,7 @@
     where id = #{id,jdbcType=INTEGER}
       and type = #{type,jdbcType=INTEGER}
   </update>
+  <select id="selectAll" resultMap="BaseResultMap">
+     select * from produce
+  </select>
 </mapper>

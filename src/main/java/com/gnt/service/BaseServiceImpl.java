@@ -2,10 +2,6 @@ package com.gnt.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Repository;
-
 import com.gnt.mapper.BaseMapper;
 
 public class BaseServiceImpl<K, V> implements BaseService<K, V>{
@@ -15,7 +11,7 @@ public class BaseServiceImpl<K, V> implements BaseService<K, V>{
 	public BaseServiceImpl() {
 	}
 
-	public BaseServiceImpl(BaseMapper baseMapper) {
+	public BaseServiceImpl(BaseMapper<K, V> baseMapper) {
 		this.baseMapper = baseMapper;
 	}
 	
