@@ -213,6 +213,7 @@ public class MapperPlugin extends PluginAdapter {
      * @param introspectedTable
      * @return 
      */
+    /*@Override
     public List<GeneratedJavaFile> contextGenerateAdditionalJavaFiles(IntrospectedTable introspectedTable) {
         JavaFormatter javaFormatter = context.getJavaFormatter();
         List<GeneratedJavaFile> mapperJavaFiles = new ArrayList<GeneratedJavaFile>();
@@ -231,7 +232,7 @@ public class MapperPlugin extends PluginAdapter {
 //                    mapperInterface.setVisibility(JavaVisibility.PUBLIC);
 //                    mapperInterface.addJavaDocLine("/**");
 //                    mapperInterface.addJavaDocLine(" * " + shortName + "扩展");
-//                    mapperInterface.addJavaDocLine(" */");
+//                    mapperInterface.addJavaDocLine(" *\/");
 //                    
 //                    //插件单独创建的 mapper interface
 //                    FullyQualifiedJavaType daoSuperType = new FullyQualifiedJavaType(expandDaoSuperClass);
@@ -256,7 +257,7 @@ public class MapperPlugin extends PluginAdapter {
 //                mapperInterface.setVisibility(JavaVisibility.PUBLIC);
 //                mapperInterface.addJavaDocLine("/**");
 //                mapperInterface.addJavaDocLine(" * MyBatis Generator");
-//                mapperInterface.addJavaDocLine(" */");
+//                mapperInterface.addJavaDocLine(" *\/");
 //
 //                FullyQualifiedJavaType daoSuperType = new FullyQualifiedJavaType(daoSuperClass);
 //                // 添加泛型支持
@@ -274,7 +275,7 @@ public class MapperPlugin extends PluginAdapter {
 //                mapperInterface.setVisibility(JavaVisibility.PUBLIC);
 //                mapperInterface.addJavaDocLine("/**");
 //                mapperInterface.addJavaDocLine(" * 由MyBatis Generator工具自动生成，请不要手动修改");
-//                mapperInterface.addJavaDocLine(" */");
+//                mapperInterface.addJavaDocLine(" *\/");
 //
 //                FullyQualifiedJavaType daoSuperType = new FullyQualifiedJavaType(daoSuperClass);
 //                // 添加泛型支持
@@ -288,5 +289,5 @@ public class MapperPlugin extends PluginAdapter {
             } 
         }
         return mapperJavaFiles;
-    }
+    }*/
 }
