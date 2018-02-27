@@ -14,10 +14,10 @@ public class SpecialServiceImpl<K, V> extends BaseServiceImpl<K, V>{
 		super(baseMapper);
 	}
 	
-	
 	public User selectBySelective(User user) {
 		return ((UserMapper)this.baseMapper).selectBySelective(user);
 	}
+	
 	
 	
 	
